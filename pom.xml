@@ -67,21 +67,33 @@
             <id>nexus</id>
             <name>Team Nexus Repository</name>
             <url>http://39.106.148.130:8081/repository/jarvan-group/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>nexus</id>
             <name>Team Nexus Repository</name>
-            <url>http://39.106.148.130:8081/repository/jarvan-group/</url>
+            <url>http://39.106.148.130:8081/repository/jarvan-release/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
     <distributionManagement>
         <repository>
-            <id>jarvan-releases</id>
+            <id>releases</id>
             <name>jarvan-releases</name>
-            <url>http://39.106.148.130:8081/repository/jarvan-releases/</url>
+            <url>http://39.106.148.130:8081/repository/jarvan-release/</url>
         </repository>
 
     </distributionManagement>
