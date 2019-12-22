@@ -21,6 +21,8 @@
         <!-- versions -->
         <compile.version>8</compile.version>
         <junit.version>4.12</junit.version>
+        <org.freemarker.version>2.3.23</org.freemarker.version>
+        <mysql.version>5.1.30</mysql.version>
     </properties>
 
     <dependencies>
@@ -34,6 +36,11 @@
     </dependencies>
 
     <build>
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/test/resources</directory>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -55,7 +62,6 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <includes>
                         <include>**/*Tests.java</include>
-                        <include>**/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -73,7 +79,7 @@
         <pluginRepository>
             <id>nexus</id>
             <name>Team Nexus Repository</name>
-            <url>http://39.106.148.130:8081/repository/jarvan-group/</url>
+            <url>http://39.106.148.130:8081/repository/jarvan-release/</url>
         </pluginRepository>
     </pluginRepositories>
 
@@ -83,7 +89,6 @@
             <name>jarvan-releases</name>
             <url>http://39.106.148.130:8081/repository/jarvan-releases/</url>
         </repository>
-
     </distributionManagement>
 
 </project>
