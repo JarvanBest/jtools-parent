@@ -111,7 +111,7 @@ public class GenCodeCommandLine {
         System.out.println("\tdel * [include_path]: search database all tables and delete files");
         System.out.println("\tgen table_name* [include_path]: search database all tables like table_name* and generate files");
         System.out.println("\tquit : quit");
-        System.out.println("\t[include_path] subdir of templateRootDir,example: 1. dao  2. dao/**,service/**");
+        System.out.println("\t[include_path] subdir of templateRootDir,example: 1. mapper  2. mapper/**,service/**");
         System.out.print("please input command:");
     }
 

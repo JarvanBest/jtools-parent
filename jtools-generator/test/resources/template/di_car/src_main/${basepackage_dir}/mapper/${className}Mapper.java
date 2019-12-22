@@ -1,14 +1,16 @@
+package ${basepackage}.mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-<#assign myParentDir="dao">
+<#assign myParentDir="mapper">
 <#assign className=table.className>
 <#assign classNameLower=className?uncap_first>
-        package ${basepackage}.dao;{basepackage}.entity.${className};
 
-<#include "/copyright_dao.include" >
+import ${basepackage}.entity.${className};
+
+<#include "/copyright_mapper.include" >
 @Repository
-public interface ${className}Dao extends MyMapper<${className}> {
+public interface ${className}Mapper extends MyMapper<${className}> {
 	/**
 	 * 分页查找
 	 *

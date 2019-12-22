@@ -1,10 +1,10 @@
 /** 
  *
- * ${table.remarks}数据库访问Dao
+ * ${table.remarks}数据库访问Mapper
  *
  * @author 朱佳文  <Auto generate>
  * @company 杭州品茗信息技术有限公司
  * @version <#if now??> ${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
- * @see ${basepackage}.${myParentDir}.${className}Dao
+ * @see ${basepackage}.${myParentDir}.${className}Mapper
  */
  

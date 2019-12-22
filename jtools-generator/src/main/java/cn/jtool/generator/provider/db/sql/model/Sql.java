@@ -414,7 +414,7 @@ public class Sql {
     }
 
     /**
-	 * 根据tableSqlName和成相对应的tableClassName,主要用途路径变量引用.如${tableClassName}Dao.java
+	 * 根据tableSqlName和成相对应的tableClassName,主要用途路径变量引用.如${tableClassName}Mapper.java
 	 * @return
 	 */
 	public String getTableClassName() {

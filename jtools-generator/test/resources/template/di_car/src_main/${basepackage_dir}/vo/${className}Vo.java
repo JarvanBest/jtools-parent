@@ -1,21 +1,9 @@
 package ${basepackage}.vo;
 
-
-
-
 import javax.persistence.*;
-
-
 <#assign myParentDir="entity">
-
-
 <#assign className=table.className>
-
-
 <#assign classNameLower=className?uncap_first>
-
-
-
 
 <#include "/copyright_class.include" >
 public class ${className}Vo  extends ${className} implements AttachFileEntityVo,AbstractFlowEntityVo,ExtendInfoEntity{

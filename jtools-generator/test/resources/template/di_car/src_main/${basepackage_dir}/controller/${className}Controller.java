@@ -1,3 +1,5 @@
+package ${basepackage}.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 <#assign rootBasepackage=basepackage?substring(0,basepackage?last_index_of("."))>
 <#assign pkJavaType=table.idColumn.javaType>
 <#assign clasNameWithoutPrefix=classNameLower?replace(rootPagefloder,'')>
-        package ${basepackage}.controller;
-        {basepackage}.entity.${className};
-        {basepackage}.vo.${className}Vo;{basepackage}.service.${className}Service;
+
+import ${basepackage}.entity.${className};
+import ${basepackage}.vo.${className}Vo;
+import ${basepackage}.service.${className}Service;
 <#assign myParentDir="${table.classNameFirstLower}">
 
 
@@ -27,8 +30,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value="/${rootPagefloder}/${classLowerNameWithoutPrefix}")
 </#if>
 public class ${className}Controller  extends AbstractAttachFileController{
+
     private   final Logger logger = LoggerFactory.getLogger(${className}Controller.class);
-	 @Autowired
+
+    @Autowired
 	private ${className}Service ${classNameLower}Service;
 
     /**

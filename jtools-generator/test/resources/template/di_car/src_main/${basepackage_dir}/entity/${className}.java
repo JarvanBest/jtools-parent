@@ -1,30 +1,20 @@
 package ${basepackage}.entity;
 
-
-
 import javax.persistence.*;
-
-
 <#assign myParentDir="entity">
-
-
 <#assign className=table.className>
-
-
 <#assign classNameLower=className?uncap_first>
-
-
 
 <#include "/copyright_class.include" >
 @Table(name = "${table.sqlName}")
 public class ${className}  implements Serializable,${table.entityBaseName}{
-	
+
 	//columns START
 	<#list table.columns as column>
 	/**
 	 * ${column.columnAlias}
 	 */
-	 <#if column.isPk()>
+	<#if column.isPk()>
 	@Id
 	</#if>
 	private ${column.simpleJavaType} ${column.camelName};
@@ -75,11 +65,11 @@ public class ${className}  implements Serializable,${table.entityBaseName}{
 		</#list>
 			.toString();
 	}
-	
-	
+
+
 }
 
-	
+
 <#macro generateJavaColumns>
 	<#list table.columns as column>
 		<#if column.isDateTimeColumn>
@@ -116,12 +106,12 @@ public class ${className}  implements Serializable,${table.entityBaseName}{
 	<#assign fkTable    = fkSqlTable.className>
 	<#assign fkPojoClass = fkSqlTable.className>
 	<#assign fkPojoClassVar = fkPojoClass?uncap_first>
-	
+
 	private Set ${fkPojoClassVar}s = new HashSet(0);
 	public void set${fkPojoClass}s(Set<${fkPojoClass}> ${fkPojoClassVar}){
 		this.${fkPojoClassVar}s = ${fkPojoClassVar};
 	}
-	
+
 	public Set<${fkPojoClass}> get${fkPojoClass}s() {
 		return ${fkPojoClassVar}s;
 	}
@@ -134,13 +124,13 @@ public class ${className}  implements Serializable,${table.entityBaseName}{
 	<#assign fkTable    = fkSqlTable.className>
 	<#assign fkPojoClass = fkSqlTable.className>
 	<#assign fkPojoClassVar = fkPojoClass?uncap_first>
-	
+
 	private ${fkPojoClass} ${fkPojoClassVar};
-	
+
 	public void set${fkPojoClass}(${fkPojoClass} ${fkPojoClassVar}){
 		this.${fkPojoClassVar} = ${fkPojoClassVar};
 	}
-	
+
 	public ${fkPojoClass} get${fkPojoClass}() {
 		return ${fkPojoClassVar};
 	}

@@ -1,18 +1,10 @@
 package ${basepackage}.service;
+
 import cn.jtool.generator.*;
 
-
 <#assign myParentDir="service">
-
-
 <#assign className=table.className>
-
-
 <#assign classNameLower=className?uncap_first>
-
-
-
-
 
 <#include "/copyright_service.include" >
 public interface ${className}Service extends BusiService<${className}><#if table.hasFLowEntity>,ProcessEntityService</#if>{
