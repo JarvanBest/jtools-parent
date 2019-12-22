@@ -36,11 +36,11 @@
     </dependencies>
 
     <build>
-        <testResources>
-            <testResource>
-                <directory>${project.basedir}/test/resources</directory>
-            </testResource>
-        </testResources>
+        <!--<testResources>-->
+            <!--<testResource>-->
+                <!--<directory>${project.basedir}/test/resources</directory>-->
+            <!--</testResource>-->
+        <!--</testResources>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -87,7 +87,7 @@
         <repository>
             <id>jarvan-releases</id>
             <name>jarvan-releases</name>
-            <url>http://39.106.148.130:8081/repository/jarvan-releases/</url>
+            <url>http://39.106.148.130:8081/repository/jarvan-release/</url>
         </repository>
     </distributionManagement>
 
