@@ -95,7 +95,6 @@
             <name>jarvan-releases</name>
             <url>http://39.106.148.130:8081/repository/jarvan-release/</url>
         </repository>
-
     </distributionManagement>
 
 </project>
