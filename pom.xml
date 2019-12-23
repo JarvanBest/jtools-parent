@@ -30,10 +30,20 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.jarvan.boot</groupId>
+                <artifactId>jarvan-dependencies</artifactId>
+                <version>1.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <testResources>
@@ -73,6 +83,12 @@
             <id>nexus</id>
             <name>Team Nexus Repository</name>
             <url>http://39.106.148.130:8081/repository/jarvan-group/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
     <pluginRepositories>
@@ -89,6 +105,7 @@
             <name>jarvan-release</name>
             <url>http://39.106.148.130:8081/repository/jarvan-release/</url>
         </repository>
+
     </distributionManagement>
 
 </project>
