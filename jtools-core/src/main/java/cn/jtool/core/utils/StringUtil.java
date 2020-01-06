@@ -568,4 +568,41 @@ public class StringUtil {
         }
         return result;
     }
+
+    public static String joinDefault(String... args) {
+        return join("$", "$", args);
+    }
+
+    /**
+     * 使用连接字符连接字符串
+     *
+     * @param joinChar
+     * @param args
+     * @return
+     */
+    public static String join(String joinChar, String nullStr, String... args) {
+        if (args == null || args.length == 0) {
+            return "";
+        }
+        if (args.length == 1) {
+            return args[0] == null ? "" : args[0].trim();
+        }
+        if (joinChar == null) {
+            joinChar = "_";
+        }
+        StringBuilder builder = new StringBuilder();
+        builder.append(args[0] == null ? "" : args[0].trim());
+        for (int i = 1; i < args.length; i++) {
+            String item = args[i];
+            if (item == null || StringUtil.isEmpty(item)) {
+                if (nullStr == null) {
+                    continue;
+                }
+                builder.append(joinChar).append(nullStr);
+            } else {
+                builder.append(joinChar).append(item.trim());
+            }
+        }
+        return builder.toString();
+    }
 }
