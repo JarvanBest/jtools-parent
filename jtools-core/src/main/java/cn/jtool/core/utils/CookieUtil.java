@@ -45,14 +45,16 @@ public class CookieUtil {
 
 		Cookie cookie = new Cookie(name, null);
 
+
+		// 删除Cookie时，只设置maxAge=0将不能够从浏览器中删除cookie,
+		// 因为一个Cookie应当属于一个path与domain，所以删除时，Cookie的这两个属性也必须设置。
 		if (path != null) {
 			cookie.setPath(path);
 		}
-
 		if (domain != null) {
 			cookie.setDomain(domain);
 		}
-
+		//0 不记录cookie 立即失效 1 会话级cookie，关闭浏览器失效
 		cookie.setMaxAge(-1000);
 		response.addCookie(cookie);
 	}
